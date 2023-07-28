@@ -21,7 +21,7 @@ document.addEventListener('click', (event) => {
         const textHex = event.target.textContent
         copyHEX(textHex)
     } else {
-        return
+        setRandomColors();
     }
 })
 
