@@ -6,7 +6,7 @@ document.addEventListener('keydown', (event) => {
     if (event.code !== 'F5' && event.code !== 'F12') {
         event.preventDefault()
     }
-    console.log(event.code)
+    
     if (event.code === 'Space') {
         setRandomColors();
     }
@@ -37,8 +37,6 @@ function generateColor() {
 
 function setRandomColors(initial) {
     const colors = initial ? getColorsFromHash() : []
-    console.log(`цвета из загрузки: ${colors}`)
-    console.log(colors)
     cols.forEach((col, index) => {
         const isNonLocked = col.querySelector('i').classList.contains('fa-lock-open');
         const color = initial 
@@ -46,7 +44,6 @@ function setRandomColors(initial) {
                 ? colors[index] 
                 : generateColor() 
             : generateColor();
-        console.log(`цвета: ${colors[index]}`)
         // if (initial) {
         //     const color = colors[index]
         // }
@@ -63,7 +60,6 @@ function setRandomColors(initial) {
         }
     })
     updateColorsHash(colors)
-    console.log(colors)
 }
 
 function copyHEX(text) {
