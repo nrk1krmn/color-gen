@@ -26,6 +26,7 @@ document.addEventListener('click', (event) => {
 })
 
 function generateColor() {
+    const winSize = window.screen.width;
     const hex = '0123456789ABCDEF'
     let color = ''
     for (let i = 0; i < 6; i++) {
@@ -44,9 +45,6 @@ function setRandomColors(initial) {
                 ? colors[index] 
                 : generateColor() 
             : generateColor();
-        // if (initial) {
-        //     const color = colors[index]
-        // }
         const text = col.querySelector('h2');
         
         if (isNonLocked) {
